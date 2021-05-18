@@ -1,0 +1,14 @@
+
+Action Creators
+    are Functions that return actions
+
+Actions 
+    an Object that have a Type and Payload
+
+Redux Thunk
+    allows to specify an additional arrow Functions
+
+useSelector from 'react-redux
+    to be able to get data from Global redux store
+
+1:02:00
