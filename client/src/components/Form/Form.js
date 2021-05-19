@@ -19,7 +19,7 @@ const Form = () => {
                 <Typography variant="h6">Creating a Memory</Typography>
                 <TextField name="creator" variant="outlined" label="Creator" fullWidth
                     value={postData.creator}
-                    onChange={pos}
+                    // onChange={pos}
                 />
             </form>
         </Paper>
