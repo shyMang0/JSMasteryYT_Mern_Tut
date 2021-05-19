@@ -12,3 +12,23 @@ useSelector from 'react-redux
     to be able to get data from Global redux store
 
 1:02:00
+
+
+#Redux useState
+const [theArray, setTheArray] = useState(initialArray);
+const [theObject, setTheObject] = useState(initialObject);
+
+#Push element at end of array
+#setTheArray(prevArray => [...prevArray, newValue])
+
+#Push/update element at end of object
+setTheObject(prevState => ({ ...prevState, currentOrNewKey: newValue}));
+
+#Push/update element at end of array of objects
+setTheArray(prevState => [...prevState, {currentOrNewKey: newValue}]);
+
+#Push element at end of object of arrays
+let specificArrayInObject = theObject.array.slice();
+specificArrayInObject.push(newValue);
+const newObj = { ...theObject, [event.target.name]: specificArrayInObject };
+theObject(newObj);
