@@ -32,3 +32,16 @@ let specificArrayInObject = theObject.array.slice();
 specificArrayInObject.push(newValue);
 const newObj = { ...theObject, [event.target.name]: specificArrayInObject };
 theObject(newObj);
+
+
+#DEVELOPMENT STRUCTURE
+#SERVER
+Add router
+Add the Controller
+
+#CLIENT
+add the API Call
+update ACTIONS
+update REDUCERS
+
+
