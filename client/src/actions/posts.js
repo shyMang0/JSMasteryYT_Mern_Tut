@@ -1,6 +1,6 @@
 
 import * as actionTypes from '../constants/actionTypes';
-import * as api from '../api';
+import * as api from '../api/index.js';
 
 // Action Creators
 //    are Functions that return actions

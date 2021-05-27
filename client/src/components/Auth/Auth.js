@@ -9,6 +9,8 @@ import { useDispatch } from 'react-redux';
 import Icon from './icon';
 import Input from './Input';
 
+import { signup, signin } from '../../actions/auth';
+
 import useStyles from './styles';
 
 const initialState = { firstName:'', lastName:'', email:'', password:'', confirmPassword:''};
@@ -25,7 +27,11 @@ const Auth = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
+        if( isSignup ){
+            dispatch(signup(formData, history));
+        } else {
+            dispatch(signin(formData, history));
+        }
     };
 
     const handleChange = (e) => { //1:22:25
@@ -34,7 +40,7 @@ const Auth = () => {
 
     const switchMode = () => {
         setIsSignup((prevVal) => !prevVal);
-        handleShowPassword(false);
+        setShowPassword(false);
     };
 
     const googleSuccess = async (res) => {
