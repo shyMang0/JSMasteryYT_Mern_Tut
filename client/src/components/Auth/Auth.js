@@ -28,8 +28,8 @@ const Auth = () => {
         console.log(formData);
     };
 
-    const handleChange = () => {
-
+    const handleChange = (e) => { //1:22:25
+        setFormData({ ...formData, [e.target.name] : e.target.value });
     };
 
     const switchMode = () => {
