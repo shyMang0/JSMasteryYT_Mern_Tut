@@ -5,7 +5,7 @@ import memories from '../../images/memories.png';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import useStyles from './styles';
 import { useDispatch } from 'react-redux';
-
+import decode from 'jwt-decode';
 
 const Navbar = () => {
     const classes = useStyles();
@@ -22,7 +22,11 @@ const Navbar = () => {
 
     useEffect(() => {
         const token = user?.token;
-        //JWT LATER
+        if( token ) {
+            const decodedToken = decode(token);
+            console.log('decodedToken', new Date(decodedToken.exp * 1000));
+            if( decodedToken.exp * 1000 < new Date().getTime() ) handleLogout();
+        }
         setUser(JSON.parse(localStorage.getItem('profile'))); 
     }, [ location ]);
 
