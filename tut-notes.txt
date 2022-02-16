@@ -37,7 +37,9 @@ theObject(newObj);
 #DEVELOPMENT STRUCTURE
 #SERVER
 Add router
+Add Models
 Add the Controller
+
 
 #CLIENT
 add the API Call
